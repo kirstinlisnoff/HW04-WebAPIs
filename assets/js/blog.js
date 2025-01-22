@@ -28,7 +28,7 @@ function renderBlogList() {
     if (posts.length===0) {
         noPosts();
     }else{
-        posts.array.forEach(post => {
+        posts.forEach(post => {
             const article = document.createElement("article");
             article.className = "card";
             article.innerHTML = `
