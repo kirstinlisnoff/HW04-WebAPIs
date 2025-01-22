@@ -3,7 +3,7 @@ const toggle = document.getElementById("toggle");
 const body = document.body;
 
 function toggleMode() {
-  body.classList.toggle("light");
+  body.classList.toggle("dark");
   body.classList.toggle("light");
 
   const mode = body.classList.contains("dark") ? "dark" : "light";
@@ -11,14 +11,14 @@ function toggleMode() {
   toggle.textContent = mode === "dark" ? '🌙' : '☀️';
 }
 
-window.appearance = function() {
+window.onload = function() {
   const theme = localStorage.getItem("theme");
   if (theme) {
     body.classList.add(theme);
     toggle.textContent = theme === "dark" ? '🌙' : '☀️';
   } else {
     body.classList.add("light");
-    toggle.textContent="☀️"
+    toggle.textContent="☀️";
   }
 
   toggle.addEventListener("click", toggleMode);
@@ -51,3 +51,4 @@ const redirectPage = function (url) {
   location.assign(url);
 };
 
+console.log(localStorage);
